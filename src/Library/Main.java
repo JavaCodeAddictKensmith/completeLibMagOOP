@@ -14,7 +14,6 @@ public class Main {
         System.out.println(" Welcome to Library Management System!");
 
        int num;
-//       do{
            System.out.println(
                    "0. Exit\n"
                    +"1. Login\n2. New User");
@@ -26,8 +25,6 @@ public class Main {
 
 
            }
-
-//       }while(num!=0);
     }
     private static void login(){
         System.out.println("Enter phone number");
@@ -47,6 +44,10 @@ public class Main {
     private  static  void newUser(){
         System.out.println("Enter name");
         String name= s.next();
+        if(database.userExists(name)){
+            System.out.println("User exists!");
+           newUser();
+        }
         System.out.println("Enter phone number");
         String phoneNumber= s.next();
         System.out.println(" Enter email");
